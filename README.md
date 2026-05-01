@@ -8,7 +8,7 @@ No plans to support higher versions, as higher versions have better alternatives
 
 <details>
 
-<summary>示例中文配置</summary>
+<summary>Default configuration</summary>
 
 ```cfg
 # Configuration file
@@ -85,7 +85,7 @@ ui {
 
 <details>
 
-<summary>Default configuration</summary>
+<summary>示例中文配置</summary>
 
 ```cfg
 # Configuration file
