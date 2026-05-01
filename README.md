@@ -1,37 +1,153 @@
-# anatawa12's ForgeGradle 1.2 fork for Gradle 4.4.1+ - example project
+# OptiAutoFine
 
-This is an example mod using the [fork of ForgeGradle-1.2 made by anatawa12](https://github.com/anatawa12/ForgeGradle-1.2).
-This fork supports Gradle 4.4.1 and later. This example project uses Gradle 5.6.4.
+A Minecraft 1.7.10 mod, automatically downloads OptiFine on first Forge launch. Originally designed for use on maps by TUW Team
 
-## How to use this example project
+Every text and message can be edited by config `optiautofine.cfg`, this is used for language localization.
 
-You can download this example project from [here](https://github.com/anatawa12/ForgeGradle-example/archive/master.zip), or use it as a template on Github.
-This project can be used as a replacement for Forge's 1.7.10 MDK.
+No plans to support higher versions, as higher versions have better alternatives for Optifine.
 
-## How to replace ForgeGradle 1.2. with anatawa12's fork
-Although this example project has some differences to Forge's 1.7.10 MDK, anatawa12's fork of ForgeGradle 1.2 can be used by most projects with only minimal changes to their Gradle build script.
+<details>
 
-Here is a list of changes to Forge's 1.7.10 MDK Gradle build script, to replace the official ForgeGradle 1.2 plugin with the fork. These changes are likely to work with most projects based on Forge's 1.7.10 MDK.
+<summary>示例中文配置</summary>
 
-In the repositories block of the buildscript section, add jcenter, and switch the Forge maven to use HTTPS instead of HTTP:
-```diff
-     repositories {
-         mavenCentral()
-         maven {
-             name = "forge"
--            url = "http://files.minecraftforge.net/maven"
-+            url = "https://maven.minecraftforge.net/"
-         }
+```cfg
+# Configuration file
+
+general {
+    # OptiFine jar filename to download. [default: OptiFine_1.7.10_HD_U_E7.jar]
+    S:optifineFile=OptiFine_1.7.10_HD_U_E7.jar
+}
+
+
+ui {
+    # Continue button text. [default: Continue]
+    S:buttonContinue=Continue
+
+    # Open mods button text. [default: Open Mods Folder]
+    S:buttonOpenMods=Open Mods Folder
+
+    # Quit button text. [default: Quit]
+    S:buttonQuit=Quit
+
+    # Detail when download is empty. [default: Downloaded file is empty.]
+    S:detailDownloadEmpty=Downloaded file is empty.
+
+    # Detail when download fails. [default: Download failed.]
+    S:detailDownloadFailed=Download failed.
+
+    # Detail when mcDir is missing. [default: Minecraft directory not available.]
+    S:detailMcDirMissing=Minecraft directory not available.
+
+    # Detail when mods directory cannot be created. [default: Failed to create mods directory.]
+    S:detailModsDirFailed=Failed to create mods directory.
+
+    # Detail when moving the jar fails. [default: Failed to move OptiFine jar into place.]
+    S:detailMoveFailed=Failed to move OptiFine jar into place.
+
+    # Detail when reason is unknown. [default: Unknown error.]
+    S:detailUnknown=Unknown error.
+
+    # Failure line 1. [default: OptiFine could not be downloaded.]
+    S:lineFail1=OptiFine could not be downloaded.
+
+    # Failure line 2. [default: Check the log for details.]
+    S:lineFail2=Check the log for details.
+
+    # Success line 1. [default: OptiFine was downloaded to your mods folder.]
+    S:lineSuccess1=OptiFine was downloaded to your mods folder.
+
+    # Success line 2. [default: Please restart Minecraft to load it.]
+    S:lineSuccess2=Please restart Minecraft to load it.
+
+    # Show detail line. [default: true]
+    B:showDetails=true
+
+    # Success detail format, uses %s. [default: File: %s]
+    S:successDetailFormat=File: %s
+
+    # Title when download fails. [default: OptiFine Download Failed]
+    S:titleFail=OptiFine Download Failed
+
+    # Title when download succeeds. [default: OptiFine Installed]
+    S:titleSuccess=OptiFine Installed
+}
 ```
 
-Also in the dependencies block of the buildscript section, change the dependency on Forge's official ForgeGradle 1.2 to the fork:
-```diff
-     dependencies {
--        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
-+        classpath ('com.anatawa12.forge:ForgeGradle:1.2-1.1.+') {
-+            changing = true
-+        }
-     }
+</details>
+
+---
+
+一个 Minecraft 1.7.10 模组，在第一次 Forge 启动时会自动下载 OptiFine，最初设计为TUW团队的地图使用。
+
+每条文本和消息都可以通过配置 `optiautofine.cfg` 进行编辑，可用于语言本地化。
+
+没有计划支持更高版本，因为高版本有更好的Optifine替代品。
+
+<details>
+
+<summary>Default configuration</summary>
+
+```cfg
+# Configuration file
+
+general {
+    # OptiFine jar filename to download. [default: OptiFine_1.7.10_HD_U_E7.jar]
+    S:optifineFile=OptiFine_1.7.10_HD_U_E7.jar
+}
+
+
+ui {
+    # Continue button text. [default: Continue]
+    S:buttonContinue=继续
+
+    # Open mods button text. [default: Open Mods Folder]
+    S:buttonOpenMods=打开 Mods 文件夹
+
+    # Quit button text. [default: Quit]
+    S:buttonQuit=退出游戏
+
+    # Detail when download is empty. [default: Downloaded file is empty.]
+    S:detailDownloadEmpty=下载的文件为空！
+
+    # Detail when download fails. [default: Download failed.]
+    S:detailDownloadFailed=§c下载失败！
+
+    # Detail when mcDir is missing. [default: Minecraft directory not available.]
+    S:detailMcDirMissing=§cMinecraft 目录不存在！
+
+    # Detail when mods directory cannot be created. [default: Failed to create mods directory.]
+    S:detailModsDirFailed=§c创建 Mods 目录失败！
+
+    # Detail when moving the jar fails. [default: Failed to move OptiFine jar into place.]
+    S:detailMoveFailed=§c未能将 OptiFine 移动到位！
+
+    # Detail when reason is unknown. [default: Unknown error.]
+    S:detailUnknown=§c未知错误！
+
+    # Failure line 1. [default: OptiFine could not be downloaded.]
+    S:lineFail1=§c无法下载 OptiFine！
+
+    # Failure line 2. [default: Check the log for details.]
+    S:lineFail2=§c请检查游戏日志！
+
+    # Success line 1. [default: OptiFine was downloaded to your mods folder.]
+    S:lineSuccess1=§a§lOptiFine 已成功安装！
+
+    # Success line 2. [default: Please restart Minecraft to load it.]
+    S:lineSuccess2=§d§l请重启游戏以重新加载 OptiFine！
+
+    # Show detail line. [default: true]
+    B:showDetails=true
+
+    # Success detail format, uses %s. [default: File: %s]
+    S:successDetailFormat=文件名: %s
+
+    # Title when download fails. [default: OptiFine Download Failed]
+    S:titleFail=§6OptiAutoFine 提醒你：
+
+    # Title when download succeeds. [default: OptiFine Installed]
+    S:titleSuccess=§6OptiAutoFine 提醒你：
+}
 ```
 
-The Gradle wrapper should also be changed to use Gradle 4.4.1 or higher. <!--Currently, the plugin [does not support Gradle 6.x](https://github.com/anatawa12/ForgeGradle-1.2/issues/9), although this may change in the future. As such, the latest version of Gradle this plugin supports is Gradle 5.6.4.-->
+</details>
