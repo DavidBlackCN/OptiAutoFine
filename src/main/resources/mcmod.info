@@ -1,0 +1,16 @@
+[
+{
+  "modid": "optiautofine",
+  "name": "OptiAutoFine",
+  "description": "Automatically downloads OptiFine on first Forge launch.",
+  "version": "1.0",
+  "mcversion": "1.7.10",
+  "url": "https://github.com/DavidBlackCN/OptiAutoFine",
+  "updateUrl": "https://github.com/DavidBlackCN/OptiAutoFine",
+  "authorList": ["DavidBlackCN"],
+  "credits": "OptiFine by sp614x & OptiAutoFine by DavidBlackCN",
+  "logoFile": "optifine.net.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]
