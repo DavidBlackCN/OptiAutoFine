@@ -6,6 +6,14 @@ Every text and message can be edited by config `optiautofine.cfg`, this is used 
 
 No plans to support higher versions, as higher versions have better alternatives for Optifine.
 
+> [!NOTE]
+> **v1.1 Changelog**
+> Added fallback download support for OptiFine when the official direct link fails.  
+> Added support for resolving randomized downloadx.php mirror links with f and x request parameters.  
+> Added BMCLAPI mirror fallback for OptiFine downloads based on the configured OptiFine filename.  
+> Improved download validation to ensure the downloaded file is a valid JAR instead of saving empty files or HTML error pages.  
+> Improved logging for each download source and fallback attempt.  
+
 <details>
 
 <summary>Default configuration</summary>
@@ -82,6 +90,14 @@ ui {
 每条文本和消息都可以通过配置 `optiautofine.cfg` 进行编辑，可用于语言本地化。
 
 没有计划支持更高版本，因为高版本有更好的Optifine替代品。
+
+> [!NOTE]
+> **v1.1 更新日志**
+> 在官方直连失败时，新增了OptiFine的镜像下载支持。  
+> 增加了解析随机downloadx.php镜像链路（`f`和`x`请求参数）的支持。  
+> 添加了基于配置的的 BMCLAPI 镜像回退。  
+> 改进了下载验证，以确保下载的文件是有效的 JAR，而不是保存空文件或 HTML 错误页面。  
+> 改进了每个下载源和回退尝试的日志记录。
 
 <details>
 
