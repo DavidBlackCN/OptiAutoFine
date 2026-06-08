@@ -9,7 +9,7 @@ No plans to support higher versions, as higher versions have better alternatives
 > [!NOTE]
 > **v1.1 Changelog**  
 > Added fallback download support for OptiFine when the official direct link fails.  
-> Added support for resolving randomized downloadx.php mirror links with f and x request parameters.  
+> Added support for resolving randomized downloadx.php mirror links with `f` and `x` request parameters.  
 > Added BMCLAPI mirror fallback for OptiFine downloads based on the configured OptiFine filename.  
 > Improved download validation to ensure the downloaded file is a valid JAR instead of saving empty files or HTML error pages.  
 > Improved logging for each download source and fallback attempt.  
